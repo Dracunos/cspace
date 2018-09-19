@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include "entities.h"
 #include "output.h"
 
 int main() {
@@ -12,7 +14,7 @@ int main() {
     std::string systems[2] = {"display", "input"};
     
     // get list of all entities in the game
-    entity entities[]
+    std::vector<Entity> entities;
     
     // at least during gameplay gamestate, run entities through each system.
     // one system should manage the input, output, logic, etc.. this should
