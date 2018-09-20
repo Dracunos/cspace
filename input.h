@@ -1,7 +1,7 @@
-#ifndef OUTPUT_H
-#define OUTPUT_H
+#ifndef INPUT_H
+#define INPUT_H
 
-class Output {
+class Input {
     public:
         int run(std::vector<Entity*> entities);
 };

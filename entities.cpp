@@ -1,20 +1,34 @@
 #include <vector>
+#include <iostream>
+#include "components.h"
 
-// create entity class here
+
 class Entity {
     public:
         int id;
+        int getComponent(Component* component);
+        int removeComponent(Component* component);
+        int addComponent(Component* component);
+        std::vector<Component*> components;
+        
         static std::vector<Entity*> entities;
-
-        static std::vector<Entity*> getEntities();
         Entity();
 
     private:
         static int lastID;
 };
 
-std::vector<Entity*> Entity::getEntities() {
-    return Entity::entities;
+int Entity::getComponent(Component* component) {
+    
+}
+
+int Entity::removeComponent(Component* component) {
+    
+}
+
+int Entity::addComponent(Component* component) {
+    std::cout << "Adding: " << component << std::endl;
+    this->components.push_back(component);
 }
 
 std::vector<Entity*> Entity::entities;

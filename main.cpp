@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
+#include "components.h"
 #include "entities.h"
+#include "input.h"
 #include "output.h"
 
 int main() {
@@ -9,25 +11,34 @@ int main() {
     // std::string gameStates[3] = {"start", "run", "end"};
     // Maybe we can have the systems handle all the gamestate type logic as well..
 
-    // create an array of systems
-    // might use function pointers as the values here instead of strings
-    std::string systems[2] = {"display", "input"};
-
-    // get list of all entities in the game
-    //std::vector<Entity> entities = Entity::entities;
+    // initialize: create systems
+    Input inputSystem;
+    Output outputSystem;
+    
+    
+    //Visible test;
+    //std::vector<Component*> t;
+    //t.push_back(&test);
+    
     Entity t;
-    Entity j;
-    std::cout << j.id << std::endl;
-    std::vector<Entity*> entityList = Entity::getEntities();
-
-    //Entity::entities.push_back(t);
-    std::cout << entityList[0];
+    Visible test;
+    t.addComponent(&test);
+    
+    std::cout << "test: " << &test << "\ncomponent: " << (t.components[0]) << std::endl;
+    
+    //Entity j;
+    //Entity q;
+    //Entity bobbertfooblemipples;
+    //t.addComponent(new Visible);
 
     // at least during gameplay gamestate, run entities through each system.
     // one system should manage the input, output, logic, etc.. this should
     // keep looping until the program exits.. Let's see how simple we can
     // make this part of the logic, try to keep as much in the systems as
     // possible
+    inputSystem.run(Entity::entities);
+    outputSystem.run(Entity::entities);
+    
 
     return 0;
 }
