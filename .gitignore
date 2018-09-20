@@ -4,3 +4,5 @@
 *.depend
 *.layout
 *.out
+*.sh
+*.bat
