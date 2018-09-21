@@ -4,39 +4,38 @@
 #include "entities.h"
 #include "input.h"
 #include "output.h"
+#include "gameInit.h"
 
 int main() {
 
-    // create array of gamestates?
-    // std::string gameStates[3] = {"start", "run", "end"};
-    // Maybe we can have the systems handle all the gamestate type logic as well..
+    // Gamestates, strings: "start" "pause" "run" "exit"
+    std::string currentState = "start";
 
     // initialize: create systems
     Input inputSystem;
     Output outputSystem;
     
+    initializeProgram();
     
-    //Visible test;
-    //std::vector<Component*> t;
-    //t.push_back(&test);
     
-    Entity t;
-    Visible test;
-    t.addComponent(&test);
-    std::cout << t.components[0]->componentName << "\n" << (&test)->componentName;
+    // skip to rendering
+    currentState = "run";
+    setUpStartingConditions();
+    initializeGame();
     
-    //Entity j;
-    //Entity q;
-    //Entity bobbertfooblemikples;
-    //t.addComponent(new Visible);
-
-    // at least during gameplay gamestate, run entities through each system.
-    // one system should manage the input, output, logic, etc.. this should
-    // keep looping until the program exits.. Let's see how simple we can
-    // make this part of the logic, try to keep as much in the systems as
-    // possible
-    inputSystem.run(Entity::entities);
-    outputSystem.run(Entity::entities);
+    while (!(currentState == "exit")) {
+        if (currentState == "run") {
+            inputSystem.run(Entity::entities);
+            outputSystem.run(Entity::entities);
+        } else if (currentState == "start") {
+            // start menu loop
+        } else if (currentState == "pause") {
+            // pause menu loop
+        } else {
+            // error
+        }
+        currentState = "exit";
+    }
     
 
     return 0;

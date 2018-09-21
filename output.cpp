@@ -11,7 +11,9 @@ class Output {
 
 int Output::run(std::vector<Entity*> entities) {
     for (int i = 0; i < entities.size(); i++) {
-        std::cout << "Running output on " << entities[i] << std::endl;
+        if (entities[i]->hasComponent("visible")) {
+            std::cout << Entity::entities[0]->id;
+        }
     }
     return 0;
 };

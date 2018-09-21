@@ -8,6 +8,7 @@
 class Entity {
     public:
         int id;
+        bool hasComponent(std::string componentName);
         Component* getComponent(std::string componentName);
         int removeComponent(Component* component);
         int addComponent(Component* component);
@@ -19,6 +20,15 @@ class Entity {
     private:
         static int lastID;
 };
+
+bool Entity::hasComponent(std::string componentName) {
+    for (int i = 0; i < this->components.size(); i++) {
+        if (this->components[i]->componentName == componentName) {
+            return true;
+        }
+    }
+    return false;
+}
 
 Component* Entity::getComponent(std::string componentName) {
     for (int i = 0; i < this->components.size(); i++) {

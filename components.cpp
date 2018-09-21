@@ -12,13 +12,29 @@ class Visible: public Component {
     public:
         bool value;
         Visible();
-        ~Visible();
 };
 
 Visible::Visible() {
     this->componentName = "visible";
 }
 
-Visible::~Visible() {
-    // Deconstruct, remove from entity list
+class Location: public Component {
+    public:
+        int x;
+        int y;
+        Location();
+};
+
+Location::Location() {
+    this->componentName = "location";
+}
+
+class Tile: public Component {
+    public:
+        std::string tile;
+        Tile();
+};
+
+Tile::Tile() {
+    this->componentName = "tile";
 }
