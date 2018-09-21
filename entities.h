@@ -6,7 +6,7 @@
 class Entity {
     public:
         int id;
-        int getComponent(Component* component);
+        Component* getComponent(std::string componentName);
         int removeComponent(Component* component);
         int addComponent(Component* component);
         std::vector<Component*> components;

@@ -23,12 +23,12 @@ int main() {
     Entity t;
     Visible test;
     t.addComponent(&test);
-    
-    std::cout << "test: " << &test << "\ncomponent: " << (t.components[0]) << std::endl;
+    t.components[0]->componentName = "bpoo";
+    std::cout << static_cast<Visible*>(t.components[0])->componentName << "\n" << (&test)->componentName;
     
     //Entity j;
     //Entity q;
-    //Entity bobbertfooblemipples;
+    //Entity bobbertfooblemikples;
     //t.addComponent(new Visible);
 
     // at least during gameplay gamestate, run entities through each system.
