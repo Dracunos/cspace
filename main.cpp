@@ -23,8 +23,7 @@ int main() {
     Entity t;
     Visible test;
     t.addComponent(&test);
-    t.components[0]->componentName = "bpoo";
-    std::cout << static_cast<Visible*>(t.components[0])->componentName << "\n" << (&test)->componentName;
+    std::cout << t.components[0]->componentName << "\n" << (&test)->componentName;
     
     //Entity j;
     //Entity q;

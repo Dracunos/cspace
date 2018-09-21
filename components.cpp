@@ -10,7 +10,6 @@ Component::~Component() {}
 
 class Visible: public Component {
     public:
-        std::string componentName;
         bool value;
         Visible();
         ~Visible();
