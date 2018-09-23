@@ -4,6 +4,7 @@
 class Input {
     public:
         int run(std::vector<Entity*> entities);
+        int runStartMenu();
 };
 
 

@@ -16,4 +16,4 @@ int Output::run(std::vector<Entity*> entities) {
         }
     }
     return 0;
-};
+}

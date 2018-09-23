@@ -5,6 +5,7 @@
 #include "input.h"
 #include "output.h"
 #include "gameInit.h"
+#include "startMenu.h"
 
 int main() {
 
@@ -14,21 +15,18 @@ int main() {
     // initialize: create systems
     Input inputSystem;
     Output outputSystem;
+    StartMenu startMenu;
     
     initializeProgram();
     
-    
-    // skip to rendering
-    currentState = "run";
-    setUpStartingConditions();
-    initializeGame();
     
     while (!(currentState == "exit")) {
         if (currentState == "run") {
             inputSystem.run(Entity::entities);
             outputSystem.run(Entity::entities);
         } else if (currentState == "start") {
-            // start menu loop
+            startMenu.run();
+            inputSystem.runStartMenu();
         } else if (currentState == "pause") {
             // pause menu loop
         } else {
