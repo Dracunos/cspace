@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <curses.h>
 #include "components.h"
 #include "entities.h"
 #include "input.h"
@@ -32,6 +33,7 @@ int main() {
         } else {
             // error
         }
+        currentState = "exit";
     }
     
 
