@@ -24,9 +24,9 @@ StartMenu::StartMenu() {
 
 int StartMenu::run() {
     #ifdef __linux__ 
-        //system("clear");
+        system("clear");
     #elif _WIN32
-        //system("cls");
+        system("cls");
     #endif
     
     if (menuState == "main") {

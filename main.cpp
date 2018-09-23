@@ -32,7 +32,6 @@ int main() {
         } else {
             // error
         }
-        currentState = "exit";
     }
     
 
