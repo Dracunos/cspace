@@ -3,9 +3,7 @@
 #include "input.h"
 #include "output.h"
 #include "startMenu.h"
-#ifdef _WIN32
 #include <curses.h>
-#endif
 
 class InputOutput {
     public:

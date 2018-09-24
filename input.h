@@ -4,9 +4,7 @@
 #include <vector>
 #include "entities.h"
 #include "startMenu.h"
-#ifdef _WIN32
 #include <curses.h>
-#endif
 
 class Input {
     public:

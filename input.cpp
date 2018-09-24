@@ -3,9 +3,7 @@
 #include "entities.h"
 #include "startMenu.h"
 #include "gameInit.h"
-#ifdef _WIN32
 #include <curses.h>
-#endif
 
 // input system will have a run method that will run on each entity in the entity list that gets passed to it
 
@@ -51,22 +49,8 @@ int Input::runStartMenu(std::string& currentState, StartMenu* startMenu) {
     return 0;
 };
 
-#ifdef __linux__
-    // TODO Implement linux stuff
-    int Input::handleInput() {
-        int inputChar;
-        inputChar = getchar();
-        switch(inputChar) {
-            case 65: // up arrow
-                std::cout << "up pressed!\n";
-                break;
-        }
-        return 0;
-    }
-#elif _WIN32
-    int Input::handleInput() {
-        int inputChar;
-        inputChar = getch();
-        return inputChar;
-    }
-#endif
+int Input::handleInput() {
+    int inputChar;
+    inputChar = getch();
+    return inputChar;
+}
