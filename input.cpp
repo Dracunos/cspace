@@ -2,6 +2,7 @@
 #include <vector>
 #include "entities.h"
 #include "startMenu.h"
+#include "gameInit.h"
 #ifdef _WIN32
 #include <curses.h>
 #endif
@@ -42,6 +43,7 @@ int Input::runStartMenu(std::string& currentState, StartMenu* startMenu) {
         if (inputChar == 'd') {
             currentState = "exit";
         } else if (inputChar == 'a') {
+            initializeGame();
             currentState = "run";
         }
     }

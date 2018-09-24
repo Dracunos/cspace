@@ -1,6 +1,15 @@
+/*
+Might move these to a namespace, or group them together some other way rather
+than them being global.
+
+*/
+
+
 #include "components.h"
 #include "entities.h"
 #include <map>
+
+
 
 int initializeProgram() {
     
@@ -16,7 +25,7 @@ int initializeGame() {
     playerLocation->x = 20;
     playerLocation->y = 20;
     player->addComponent(playerLocation);
-    Tile *playerTile = new Tile;
+    Tile *playerTile = new Tile();
     playerTile->tile = "@";
     player->addComponent(playerTile);
 }
