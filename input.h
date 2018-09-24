@@ -3,22 +3,19 @@
 
 #include <vector>
 #include "entities.h"
+#include "startMenu.h"
 #ifdef _WIN32
-#include <windows.h>
+#include <curses.h>
 #endif
 
 class Input {
     public:
-        int run(std::vector<Entity*> entities);
-        int runStartMenu();
+        int run(std::vector<Entity*> entities, std::string& currentState);
+        int runStartMenu(std::string& currentState, StartMenu* startMenu);
+        WINDOW* screen;
     
     private:
-        #ifdef __linux__
-            int handleInput();
-        #elif _WIN32
-            int handleInput(HANDLE consoleInput, DWORD numberRead,
-                PINPUT_RECORD inBuffer);
-        #endif
+        int handleInput();
 };
 
 

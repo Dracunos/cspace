@@ -1,15 +1,28 @@
 #ifndef STARTMENU_H
 #define STARTMENU_H
+#include <vector>
+
+struct standardMenuStruct {
+    std::string menuTitle;
+    std::string menuDesc;
+    std::vector<std::string> menuOptions;
+};
+
+class StandardMenu {
+    public:
+        standardMenuStruct menuData;
+};
+
+class MainMenu: public StandardMenu {
+    public:
+        MainMenu();
+};
 
 class StartMenu {
     public:
-        int run();
-        StartMenu();
-    
-    private:
         std::string menuState;
-        int runMainMenu();
-        std::vector<std::string> mainOptions;
+        MainMenu mainMenu;
+        StartMenu();
 };
 
 #endif
