@@ -16,7 +16,7 @@ class Output {
         int drawBuffer();
         int drawGameScreen(std::vector<Entity*> entities);
         const int DISPLAYWIDTH = 89;
-        const int DISPLAYHEIGHT = 32;
+        const int DISPLAYHEIGHT = 28;
         const int BUFFERHEIGHT = 5;
         const int RIGHTPANELWIDTH = 22;
 };
