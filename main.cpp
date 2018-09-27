@@ -5,6 +5,7 @@
 #include "entities.h"
 #include "inputOutput.h"
 #include "gameInit.h"
+#include "logging.h"
 
 int main() {
     // Set up timing
@@ -39,7 +40,7 @@ int main() {
             }
         }
     }
-    
+    log("test logging.");
 
     return 0;
 }
